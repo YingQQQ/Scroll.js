@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+    #one, #two{
+      width: 100%;
+      height: 700px;
+    }
+    #one{
+      position: relative;
+      background: black;
+    }
+    #two{
+      position: relative;
+      background: red;
+    }
+    .btn{
+      position: relative;
+      display: block;
+      top: 100px;
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <div id="one">
+    <a href="#two" class="btn">click me</a>
+  </div>
+  <div id="two"></div>
+  <script type="text/javascript" src="./scroll.js">
+  </script>
+  <script type="text/javascript">
+    var btn = document.querySelector('.btn');
+    btn.onclick = function(e){
+      e.preventDefault();
+      if (e.target === this) {
+        single(this.getAttribute('href') , {
+          duration: 1000,
+          offset: -500,
+        })
+      }
+    }
+  </script>
+</body>
+</html>
